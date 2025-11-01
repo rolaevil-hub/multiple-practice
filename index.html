@@ -34,18 +34,12 @@ h2 {
     border-radius: 8px;
     margin-top: 30px;
 }
-h3 {
-    color: #1a6a3a;
-    border-left: 5px solid #28a745;
-    padding-left: 10px;
-    margin-top: 25px;
-}
 .rule-section {
     margin-bottom: 30px;
     border-top: 1px solid #eee;
     padding-top: 20px;
 }
-.rule-description, .example {
+.rule-description {
     background-color: #fdfdee;
     border: 1px solid #f0e68c;
     padding: 15px;
@@ -65,12 +59,10 @@ h3 {
 }
 .question-text { margin-right: 20px; font-weight: 500; }
 .question label { margin: 0 10px; cursor: pointer; }
-.question input[type="radio"] {
-    margin-right: 5px; transform: scale(1.2); vertical-align: middle;
-}
+.question input[type="radio"] { margin-right: 5px; transform: scale(1.2); }
 .question input[type="text"] {
-    font-size: 1em; padding: 8px; border: 1px solid #ccc; border-radius: 4px;
-    margin: 5px 10px 5px 0; width: 200px;
+    font-size: 1em; padding: 8px; border: 1px solid #ccc;
+    border-radius: 4px; margin: 5px 10px 5px 0; width: 200px;
 }
 .check-btn {
     background-color: #007bff; color: white; border: none;
@@ -82,9 +74,9 @@ h3 {
 .feedback.correct { color: #28a745; }
 .feedback.incorrect { color: #dc3545; }
 #reset-btn, #score-btn {
-    display: block; margin: 20px auto;
-    border: none; padding: 12px 25px; border-radius: 5px;
-    cursor: pointer; font-size: 1.1em; font-weight: bold; color: white;
+    display: block; margin: 20px auto; border: none;
+    padding: 12px 25px; border-radius: 5px; cursor: pointer;
+    font-size: 1.1em; font-weight: bold; color: white;
 }
 #reset-btn { background-color: #dc3545; }
 #reset-btn:hover { background-color: #c82333; }
@@ -105,122 +97,143 @@ h3 {
     <p>請根據規則，判斷下列數字。完成選擇後，按下「檢查」按鈕看看你是否答對了！</p>
     <button id="reset-btn">全部重來</button>
 
-    <!-- 範例題區（示意保留原結構） -->
-    <div class="rule-section">
-        <h2>二、2的倍數簡易判斷法</h2>
-        <p class="rule-description">個位數是0、2、4、6、8的整數，是2的倍數。</p>
-        <div class="question" data-answer="not" data-id="q1_1">
-            <span class="question-text">1. 55</span>
-            <label><input type="radio" name="q1_1" value="is">是</label>
-            <label><input type="radio" name="q1_1" value="not">不是</label>
-            <button class="check-btn">檢查</button><span class="feedback"></span>
-        </div>
-        <div class="question fill-in" data-answer="1,4,7" data-id="q3_fill">
-            <span class="question-text">若「23□」是3的倍數，□＝？</span>
-            <input type="text" class="fill-in-answer" placeholder="填入所有可能數字,用逗號,分隔">
-            <button class="check-btn">檢查</button><span class="feedback"></span>
-        </div>
-    </div>
+<!-- ====== 2 的倍數 ====== -->
+<div class="rule-section">
+<h2>二、2的倍數簡易判斷法</h2>
+<p class="rule-description">個位數是 0、2、4、6、8 的整數，一定是 2 的倍數。</p>
+<div class="question" data-id="q2_1" data-answer="not"><span class="question-text">1. 55</span><label><input type="radio" name="q2_1" value="is">是</label><label><input type="radio" name="q2_1" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q2_2" data-answer="is"><span class="question-text">2. 470</span><label><input type="radio" name="q2_2" value="is">是</label><label><input type="radio" name="q2_2" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q2_3" data-answer="not"><span class="question-text">3. 43</span><label><input type="radio" name="q2_3" value="is">是</label><label><input type="radio" name="q2_3" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q2_4" data-answer="is"><span class="question-text">4. 158</span><label><input type="radio" name="q2_4" value="is">是</label><label><input type="radio" name="q2_4" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+</div>
 
-    <button id="score-btn">查看分數</button>
-    <p id="score-output"></p>
+<!-- ====== 3 的倍數 ====== -->
+<div class="rule-section">
+<h2>三、3的倍數簡易判斷法</h2>
+<p class="rule-description">各位數字的總和是3的倍數，該數就是3的倍數。</p>
+<div class="question" data-id="q3_1" data-answer="not"><span class="question-text">1. 5555</span><label><input type="radio" name="q3_1" value="is">是</label><label><input type="radio" name="q3_1" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q3_2" data-answer="not"><span class="question-text">2. 1472</span><label><input type="radio" name="q3_2" value="is">是</label><label><input type="radio" name="q3_2" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q3_3" data-answer="is"><span class="question-text">3. 2340</span><label><input type="radio" name="q3_3" value="is">是</label><label><input type="radio" name="q3_3" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question fill-in" data-id="q3_fill" data-answer="1,4,7"><span class="question-text">4. 若「23□」是3的倍數，□＝？</span><input type="text" class="fill-in-answer" placeholder="填入所有可能數字,用逗號,分隔"><button class="check-btn">檢查</button><span class="feedback"></span></div>
+</div>
+
+<!-- ====== 4 的倍數 ====== -->
+<div class="rule-section">
+<h2>四、4的倍數簡易判斷法</h2>
+<p class="rule-description">末兩位數是00或4的倍數，整數就是4的倍數。</p>
+<div class="question" data-id="q4_1" data-answer="is"><span class="question-text">1. 5556</span><label><input type="radio" name="q4_1" value="is">是</label><label><input type="radio" name="q4_1" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q4_2" data-answer="is"><span class="question-text">2. 1472</span><label><input type="radio" name="q4_2" value="is">是</label><label><input type="radio" name="q4_2" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q4_3" data-answer="is"><span class="question-text">3. 244</span><label><input type="radio" name="q4_3" value="is">是</label><label><input type="radio" name="q4_3" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q4_4" data-answer="not"><span class="question-text">4. 158</span><label><input type="radio" name="q4_4" value="is">是</label><label><input type="radio" name="q4_4" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+</div>
+
+<!-- ====== 5 的倍數 ====== -->
+<div class="rule-section">
+<h2>五、5的倍數簡易判斷法</h2>
+<p class="rule-description">個位數是0或5的整數，一定是5的倍數。</p>
+<div class="question" data-id="q5_1" data-answer="not"><span class="question-text">1. 551</span><label><input type="radio" name="q5_1" value="is">是</label><label><input type="radio" name="q5_1" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q5_2" data-answer="is"><span class="question-text">2. 4700</span><label><input type="radio" name="q5_2" value="is">是</label><label><input type="radio" name="q5_2" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q5_3" data-answer="is"><span class="question-text">3. 430</span><label><input type="radio" name="q5_3" value="is">是</label><label><input type="radio" name="q5_3" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q5_4" data-answer="is"><span class="question-text">4. 1585</span><label><input type="radio" name="q5_4" value="is">是</label><label><input type="radio" name="q5_4" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+</div>
+
+<!-- ====== 9 的倍數 ====== -->
+<div class="rule-section">
+<h2>九、9的倍數簡易判斷法</h2>
+<p class="rule-description">各位數字的總和是9的倍數，該數就是9的倍數。</p>
+<div class="question" data-id="q9_1" data-answer="is"><span class="question-text">1. 756</span><label><input type="radio" name="q9_1" value="is">是</label><label><input type="radio" name="q9_1" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q9_2" data-answer="not"><span class="question-text">2. 1472</span><label><input type="radio" name="q9_2" value="is">是</label><label><input type="radio" name="q9_2" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q9_3" data-answer="is"><span class="question-text">3. 441</span><label><input type="radio" name="q9_3" value="is">是</label><label><input type="radio" name="q9_3" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q9_4" data-answer="is"><span class="question-text">4. 198</span><label><input type="radio" name="q9_4" value="is">是</label><label><input type="radio" name="q9_4" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+</div>
+
+<!-- ====== 11 的倍數 ====== -->
+<div class="rule-section">
+<h2>十一、11的倍數簡易判斷法</h2>
+<p class="rule-description">奇數位數字和與偶數位數字和的差是0或11的倍數，即為11的倍數。</p>
+<div class="question" data-id="q11_1" data-answer="not"><span class="question-text">1. 5556</span><label><input type="radio" name="q11_1" value="is">是</label><label><input type="radio" name="q11_1" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q11_2" data-answer="is"><span class="question-text">2. 1672</span><label><input type="radio" name="q11_2" value="is">是</label><label><input type="radio" name="q11_2" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q11_3" data-answer="is"><span class="question-text">3. 979</span><label><input type="radio" name="q11_3" value="is">是</label><label><input type="radio" name="q11_3" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+<div class="question" data-id="q11_4" data-answer="not"><span class="question-text">4. 158</span><label><input type="radio" name="q11_4" value="is">是</label><label><input type="radio" name="q11_4" value="not">不是</label><button class="check-btn">檢查</button><span class="feedback"></span></div>
+</div>
+
+<button id="score-btn">查看分數</button>
+<p id="score-output"></p>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-
-  // --- 儲存與載入功能 ---
-  const STORAGE_KEY = "multiple_quiz_progress";
-  function saveProgress() {
-      const data = {};
-      document.querySelectorAll('.question').forEach(q => {
-          const id = q.dataset.id;
-          if(!id) return;
-          if(q.classList.contains('fill-in')){
-              const val = q.querySelector('.fill-in-answer').value;
-              data[id] = { type:'text', value: val };
-          } else {
-              const sel = q.querySelector('input[type="radio"]:checked');
-              data[id] = { type:'radio', value: sel ? sel.value : "" };
-          }
-      });
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  const STORAGE_KEY="multiple_quiz_progress";
+  function normalizeAnswer(input){return input.replace(/，/g,',').split(',').map(s=>s.trim()).filter(Boolean).sort().join(',');}
+  function saveProgress(){
+    const data={};
+    document.querySelectorAll('.question').forEach(q=>{
+      const id=q.dataset.id;
+      if(!id)return;
+      if(q.classList.contains('fill-in')){
+        data[id]={type:'text',value:q.querySelector('.fill-in-answer')?.value||""};
+      }else{
+        const sel=q.querySelector('input[type="radio"]:checked');
+        data[id]={type:'radio',value:sel?sel.value:""};
+      }
+    });
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
   }
-  function loadProgress() {
-      const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-      Object.entries(data).forEach(([id, item])=>{
-          const q = document.querySelector(`[data-id="${id}"]`);
-          if(!q) return;
-          if(item.type === 'text'){
-              q.querySelector('.fill-in-answer').value = item.value || "";
-          } else if(item.type === 'radio' && item.value){
-              const r = q.querySelector(`input[type="radio"][value="${item.value}"]`);
-              if(r) r.checked = true;
-          }
-      });
+  function loadProgress(){
+    const data=JSON.parse(localStorage.getItem(STORAGE_KEY)||"{}");
+    Object.entries(data).forEach(([id,item])=>{
+      const q=document.querySelector(`[data-id="${id}"]`);
+      if(!q)return;
+      if(item.type==='text'){q.querySelector('.fill-in-answer').value=item.value||"";}
+      else if(item.type==='radio'&&item.value){
+        const r=q.querySelector(`input[type="radio"][value="${item.value}"]`);
+        if(r)r.checked=true;
+      }
+    });
   }
-
-  // --- 答題判斷 ---
-  function normalizeAnswer(input){
-      return input.replace(/，/g,',').split(',')
-          .map(s=>s.trim()).filter(Boolean).sort().join(',');
-  }
-
   document.querySelectorAll('.check-btn').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-          const q=btn.parentElement;
-          const ans=q.dataset.answer;
-          const fb=q.querySelector('.feedback');
-          let correct=false;
-          if(q.classList.contains('fill-in')){
-              const val=normalizeAnswer(q.querySelector('.fill-in-answer').value);
-              if(!val){fb.textContent='請填入答案';fb.className='feedback incorrect';return;}
-              correct=(val===ans);
-          }else{
-              const sel=q.querySelector('input[type="radio"]:checked');
-              if(!sel){fb.textContent='請選擇答案';fb.className='feedback incorrect';return;}
-              correct=(sel.value===ans);
-          }
-          fb.textContent=correct?'答對了！🎉':'再試一次！💪';
-          fb.className='feedback '+(correct?'correct':'incorrect');
-          saveProgress(); // ⬅️ 每次檢查後儲存進度
-      });
+    btn.addEventListener('click',()=>{
+      const q=btn.parentElement,ans=q.dataset.answer,fb=q.querySelector('.feedback');
+      let correct=false;
+      if(q.classList.contains('fill-in')){
+        const val=normalizeAnswer(q.querySelector('.fill-in-answer').value);
+        if(!val){fb.textContent='請填入答案';fb.className='feedback incorrect';return;}
+        correct=(val===ans);
+      }else{
+        const sel=q.querySelector('input[type="radio"]:checked');
+        if(!sel){fb.textContent='請選擇答案';fb.className='feedback incorrect';return;}
+        correct=(sel.value===ans);
+      }
+      fb.textContent=correct?'答對了！🎉':'再試一次！💪';
+      fb.className='feedback '+(correct?'correct':'incorrect');
+      saveProgress();
+    });
   });
-
-  // --- 即時儲存輸入 ---
-  document.querySelectorAll('input[type="radio"], input[type="text"]').forEach(el=>{
-      el.addEventListener('input', saveProgress);
-      el.addEventListener('change', saveProgress);
+  document.querySelectorAll('input[type="radio"],input[type="text"]').forEach(el=>{
+    el.addEventListener('input',saveProgress);
+    el.addEventListener('change',saveProgress);
   });
-
-  // --- 全部重來 ---
   document.getElementById('reset-btn').addEventListener('click',()=>{
-      localStorage.removeItem(STORAGE_KEY);
-      document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);
-      document.querySelectorAll('input[type="text"]').forEach(i=>i.value='');
-      document.querySelectorAll('.feedback').forEach(fb=>{fb.textContent='';fb.className='feedback';});
-      document.getElementById('score-output').textContent='';
+    localStorage.removeItem(STORAGE_KEY);
+    document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);
+    document.querySelectorAll('input[type="text"]').forEach(i=>i.value='');
+    document.querySelectorAll('.feedback').forEach(fb=>{fb.textContent='';fb.className='feedback';});
+    document.getElementById('score-output').textContent='';
   });
-
-  // --- 查看分數 ---
   document.getElementById('score-btn').addEventListener('click',()=>{
-      const qs=document.querySelectorAll('.question');
-      let c=0,t=qs.length;
-      qs.forEach(q=>{
-          const a=q.dataset.answer;
-          if(q.classList.contains('fill-in')){
-              if(normalizeAnswer(q.querySelector('.fill-in-answer').value)===a)c++;
-          }else{
-              const s=q.querySelector('input[type="radio"]:checked');
-              if(s&&s.value===a)c++;
-          }
-      });
-      document.getElementById('score-output').textContent=`共 ${t} 題，答對 ${c} 題，正確率 ${(c/t*100).toFixed(0)}%`;
+    const qs=document.querySelectorAll('.question');let c=0,t=qs.length;
+    qs.forEach(q=>{
+      const a=q.dataset.answer;
+      if(q.classList.contains('fill-in')){
+        if(normalizeAnswer(q.querySelector('.fill-in-answer').value)===a)c++;
+      }else{
+        const s=q.querySelector('input[type="radio"]:checked');
+        if(s&&s.value===a)c++;
+      }
+    });
+    document.getElementById('score-output').textContent=`共 ${t} 題，答對 ${c} 題，正確率 ${(c/t*100).toFixed(0)}%`;
   });
-
-  // --- 啟動時載入舊進度 ---
   loadProgress();
-
 });
 </script>
 </body>
