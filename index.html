@@ -3,128 +3,85 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>倍數判斷練習｜主題選擇版</title>
+<title>倍數判斷練習｜主題選擇＋填空題版</title>
 <style>
-  body{
-    font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;
-    background:#f4f8f9;color:#333;line-height:1.8;margin:0
-  }
-  .container{max-width:900px;margin:24px auto;padding:24px;background:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
-  h1{margin:0 0 12px;text-align:center;color:#0b63c6}
-  p.lead{margin:0 0 20px;text-align:center}
-  /* 選單 */
-  .menu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:12px 0 8px}
-  .topic-btn{
-    border:none;border-radius:14px;padding:16px;cursor:pointer;color:#fff;font-weight:700;font-size:18px;
-    display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 6px 16px rgba(0,0,0,.08);
-    transition:transform .06s ease, filter .2s ease
-  }
-  .topic-btn:active{transform:translateY(1px)}
-  .c2{background:#3b82f6}  .c3{background:#f59e0b}
-  .c4{background:#10b981}  .c5{background:#ef4444}
-  .c9{background:#8b5cf6}  .c11{background:#14b8a6}
-  .subtle{font-size:13px;opacity:.9}
-
-  /* 題目 */
-  .rule-section{margin:20px 0 28px;border-top:1px solid #eee;padding-top:18px}
-  h2{margin:0 0 10px;color:#0b63c6}
-  .rule-description{background:#fdfdee;border:1px solid #f0e68c;padding:14px;border-radius:10px;margin:10px 0 14px}
-  .question{
-    background:#fafafa;border:1px solid #e6e6e6;border-radius:10px;padding:14px;margin:10px 0;
-    display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:17px
-  }
-  .question .question-text{font-weight:600;margin-right:8px}
-  .question label{cursor:pointer;margin-right:8px}
-  .question input[type="radio"]{transform:scale(1.2);margin-right:4px}
-  .question input[type="text"]{padding:8px 10px;border:1px solid #ccc;border-radius:8px;width:220px}
-  .check-btn{
-    background:#0b63c6;color:#fff;border:none;border-radius:8px;padding:8px 14px;font-weight:700;cursor:pointer
-  }
-  .check-btn:hover{filter:brightness(.95)}
-  .feedback{font-weight:800}
-  .feedback.correct{color:#16a34a}
-  .feedback.incorrect{color:#dc2626}
-
-  /* 控制按鈕 */
-  .bar{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:18px 0}
-  .btn{
-    border:none;border-radius:10px;padding:10px 16px;font-weight:800;color:#fff;cursor:pointer
-  }
-  .btn-primary{background:#0ea5e9}
-  .btn-danger{background:#ef4444}
-  .btn-secondary{background:#64748b}
-  .btn:hover{filter:brightness(.95)}
-  #score-output{text-align:center;font-weight:800;color:#0b63c6}
-
-  @media (max-width:640px){
-    .menu{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .question{flex-direction:column;align-items:flex-start}
-  }
+body{font-family:"Microsoft JhengHei","PingFang TC",Arial,sans-serif;background:#f4f8f9;color:#333;line-height:1.8;margin:0}
+.container{max-width:900px;margin:24px auto;padding:24px;background:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+h1{margin:0 0 12px;text-align:center;color:#0b63c6}
+p.lead{text-align:center;margin-bottom:20px}
+.menu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:12px 0}
+.topic-btn{border:none;border-radius:14px;padding:16px;cursor:pointer;color:#fff;font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 6px 16px rgba(0,0,0,.08);transition:transform .06s,filter .2s}
+.topic-btn:active{transform:translateY(1px)}
+.c2{background:#3b82f6}.c3{background:#f59e0b}.c4{background:#10b981}.c5{background:#ef4444}.c9{background:#8b5cf6}.c11{background:#14b8a6}
+.subtle{font-size:13px;opacity:.9}
+.rule-section{margin:20px 0 28px;border-top:1px solid #eee;padding-top:18px}
+h2{margin:0 0 10px;color:#0b63c6}
+.rule-description{background:#fdfdee;border:1px solid #f0e68c;padding:14px;border-radius:10px;margin:10px 0 14px}
+.question{background:#fafafa;border:1px solid #e6e6e6;border-radius:10px;padding:14px;margin:10px 0;display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:17px}
+.question-text{font-weight:600;margin-right:8px}
+.question label{cursor:pointer;margin-right:8px}
+.question input[type="radio"]{transform:scale(1.2);margin-right:4px}
+.question input[type="text"]{padding:8px 10px;border:1px solid #ccc;border-radius:8px;width:220px}
+.check-btn{background:#0b63c6;color:#fff;border:none;border-radius:8px;padding:8px 14px;font-weight:700;cursor:pointer}
+.check-btn:hover{filter:brightness(.95)}
+.feedback{font-weight:800}
+.feedback.correct{color:#16a34a}
+.feedback.incorrect{color:#dc2626}
+.bar{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:18px 0}
+.btn{border:none;border-radius:10px;padding:10px 16px;font-weight:800;color:#fff;cursor:pointer}
+.btn-primary{background:#0ea5e9}.btn-danger{background:#ef4444}.btn-secondary{background:#64748b}
+.btn:hover{filter:brightness(.95)}
+#score-output{text-align:center;font-weight:800;color:#0b63c6}
+@media(max-width:640px){.menu{grid-template-columns:repeat(2,minmax(0,1fr))}.question{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🔢 倍數判斷練習</h1>
-    <p class="lead">請先選擇練習主題（每次會自動產生新題目）。</p>
-
-    <!-- 主題選單 -->
-    <div id="menu">
-      <div class="menu">
-        <button class="topic-btn c2"  data-base="2">2️⃣ 2 的倍數<br><span class="subtle">偶數判斷</span></button>
-        <button class="topic-btn c3"  data-base="3">3️⃣ 3 的倍數<br><span class="subtle">數字和是 3 的倍數</span></button>
-        <button class="topic-btn c4"  data-base="4">4️⃣ 4 的倍數<br><span class="subtle">末兩位是 4 的倍數</span></button>
-        <button class="topic-btn c5"  data-base="5">5️⃣ 5 的倍數<br><span class="subtle">個位 0 或 5</span></button>
-        <button class="topic-btn c9"  data-base="9">9️⃣ 9 的倍數<br><span class="subtle">數字和是 9 的倍數</span></button>
-        <button class="topic-btn c11" data-base="11">1️⃣1️⃣ 11 的倍數<br><span class="subtle">奇偶位差是 0 或 11 的倍數</span></button>
-      </div>
+<div class="container">
+  <h1>🔢 倍數判斷練習</h1>
+  <p class="lead">請先選擇練習主題（每次會自動產生新題目）。</p>
+  <div id="menu">
+    <div class="menu">
+      <button class="topic-btn c2" data-base="2">2️⃣ 2 的倍數<br><span class="subtle">偶數判斷</span></button>
+      <button class="topic-btn c3" data-base="3">3️⃣ 3 的倍數<br><span class="subtle">數字和是 3 的倍數</span></button>
+      <button class="topic-btn c4" data-base="4">4️⃣ 4 的倍數<br><span class="subtle">末兩位是 4 的倍數</span></button>
+      <button class="topic-btn c5" data-base="5">5️⃣ 5 的倍數<br><span class="subtle">個位 0 或 5</span></button>
+      <button class="topic-btn c9" data-base="9">9️⃣ 9 的倍數<br><span class="subtle">數字和是 9 的倍數</span></button>
+      <button class="topic-btn c11" data-base="11">1️⃣1️⃣ 11 的倍數<br><span class="subtle">奇偶位差為 0 或 11 的倍數</span></button>
     </div>
-
-    <!-- 題目區 -->
-    <div id="quiz-area" style="display:none"></div>
-
-    <!-- 控制列 -->
-    <div id="controls" class="bar" style="display:none">
-      <button id="back-btn"  class="btn btn-secondary">⬅️ 回主題選單</button>
-      <button id="reset-btn" class="btn btn-danger">🔄 全部重來（重新出題）</button>
-      <button id="score-btn" class="btn btn-primary">📊 查看分數</button>
-    </div>
-    <p id="score-output"></p>
   </div>
 
+  <div id="quiz-area" style="display:none"></div>
+  <div id="controls" class="bar" style="display:none">
+    <button id="back-btn" class="btn btn-secondary">⬅️ 回主題選單</button>
+    <button id="reset-btn" class="btn btn-danger">🔄 全部重來</button>
+    <button id="score-btn" class="btn btn-primary">📊 查看分數</button>
+  </div>
+  <p id="score-output"></p>
+</div>
+
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const menu = document.getElementById('menu');
-  const quizArea = document.getElementById('quiz-area');
-  const controls = document.getElementById('controls');
-  const scoreOut = document.getElementById('score-output');
-  const STORAGE_PREFIX = 'multiple_quiz_topic_';
+document.addEventListener('DOMContentLoaded',()=>{
+  const menu=document.getElementById('menu');
+  const quizArea=document.getElementById('quiz-area');
+  const controls=document.getElementById('controls');
+  const scoreOut=document.getElementById('score-output');
+  const STORAGE_PREFIX='multiple_quiz_topic_';
+  let currentBase=null;
 
-  let currentBase = null;
-
-  // 工具：三位數
-  const rnd3 = () => Math.floor(100 + Math.random()*900);
-
-  // 倍數檢查
-  const isMultiple = {
+  const rnd3=()=>Math.floor(100+Math.random()*900);
+  const isMultiple={
     2:n=>n%2===0,
     3:n=>n.toString().split('').reduce((a,b)=>a+ +b,0)%3===0,
     4:n=>n%4===0,
     5:n=>n%5===0,
     9:n=>n.toString().split('').reduce((a,b)=>a+ +b,0)%9===0,
     11:n=>{
-      const d=n.toString().split('').map(Number);
-      let odd=0, even=0;
-      // 從個位數算起：個位=奇位
-      for(let i=0;i<d.length;i++){
-        const fromRight=d[d.length-1-i];
-        if(i%2===0) odd+=fromRight; else even+=fromRight;
-      }
-      return Math.abs(odd-even)%11===0;
+      const d=n.toString().split('').map(Number);let o=0,e=0;
+      for(let i=0;i<d.length;i++){const fromRight=d[d.length-1-i];if(i%2===0)o+=fromRight;else e+=fromRight;}
+      return Math.abs(o-e)%11===0;
     }
   };
-
-  // 規則文案
-  const ruleText = {
+  const ruleText={
     2:"個位數是 0、2、4、6、8 的整數，一定是 2 的倍數。",
     3:"各位數字的總和是 3 的倍數，該數就是 3 的倍數。",
     4:"末兩位數是 00 或 4 的倍數，整數就是 4 的倍數。",
@@ -132,166 +89,105 @@ document.addEventListener('DOMContentLoaded', () => {
     9:"各位數字的總和是 9 的倍數，該數就是 9 的倍數。",
     11:"奇數位和與偶數位和的差為 0 或 11 的倍數，即為 11 的倍數。"
   };
+// 將你的 fillQuestions 物件整段替換成這一段
+const fillQuestions = {
+  2:  { text: "若數字「4□」是 2 的倍數，□＝？",   ans: "0,2,4,6,8" },
+  3:  { text: "若數字「23□」是 3 的倍數，□＝？",  ans: "1,4,7" },
+  4:  { text: "若數字「□6」是 4 的倍數，□＝？",   ans: "1,3,5,7,9" }, // ← 修正這行
+  5:  { text: "若數字「67□」是 5 的倍數，□＝？",  ans: "0,5" },
+  9:  { text: "若數字「45□」是 9 的倍數，□＝？",  ans: "0,9" },
+  11: { text: "若數字「1□1」是 11 的倍數，□＝？", ans: "2" }          // ← 修正這行
+};
+  const normalize=s=>s.replace(/，/g,',').split(',').map(x=>x.trim()).filter(Boolean).sort().join(',');
 
-  // 容錯：全形逗號
-  const normalize = s=> s.replace(/，/g,',').split(',').map(x=>x.trim()).filter(Boolean).sort().join(',');
-
-  // 綁定主題按鈕
-  document.querySelectorAll('.topic-btn').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      const base = btn.dataset.base;
-      enterTopic(base);
-    });
-  });
-
-  // 進入主題
-  function enterTopic(base){
-    currentBase = String(base);
-    scoreOut.textContent = '';
-    menu.style.display='none';
-    quizArea.style.display='block';
-    controls.style.display='flex';
-    generateQuiz(currentBase);
-    loadProgress(currentBase);
-  }
-
-  // 返回選單
-  document.getElementById('back-btn').addEventListener('click', ()=>{
-    quizArea.innerHTML = '';
-    quizArea.style.display='none';
-    controls.style.display='none';
-    scoreOut.textContent='';
-    menu.style.display='block';
-    currentBase = null;
-  });
-
-  // 重新出題
-  document.getElementById('reset-btn').addEventListener('click', ()=>{
-    if(!currentBase) return;
-    localStorage.removeItem(STORAGE_PREFIX+currentBase);
-    scoreOut.textContent='';
-    generateQuiz(currentBase);
-  });
-
-  // 查看分數
-  document.getElementById('score-btn').addEventListener('click', ()=>{
-    const qs = quizArea.querySelectorAll('.question');
-    let c=0, t=qs.length;
-    qs.forEach(q=>{
-      const ans=q.dataset.answer;
+  document.querySelectorAll('.topic-btn').forEach(b=>b.addEventListener('click',()=>enterTopic(b.dataset.base)));
+  document.getElementById('back-btn').onclick=()=>{quizArea.innerHTML='';quizArea.style.display='none';controls.style.display='none';menu.style.display='block';scoreOut.textContent='';currentBase=null;}
+  document.getElementById('reset-btn').onclick=()=>{if(!currentBase)return;localStorage.removeItem(STORAGE_PREFIX+currentBase);scoreOut.textContent='';generateQuiz(currentBase);}
+  document.getElementById('score-btn').onclick=()=>{
+    const qs=quizArea.querySelectorAll('.question');let c=0,t=qs.length;
+    qs.forEach(q=>{const a=q.dataset.answer;
       if(q.classList.contains('fill-in')){
-        const v = normalize(q.querySelector('.fill-in-answer').value);
-        if(v===ans) c++;
+        if(normalize(q.querySelector('.fill-in-answer').value)===a)c++;
       }else{
-        const s=q.querySelector('input[type="radio"]:checked');
-        if(s && s.value===ans) c++;
+        const s=q.querySelector('input[type="radio"]:checked');if(s&&s.value===a)c++;
       }
     });
-    scoreOut.textContent = `本主題共 ${t} 題，答對 ${c} 題，正確率 ${(c/t*100).toFixed(0)}%`;
-  });
+    scoreOut.textContent=`本主題共 ${t} 題，答對 ${c} 題，正確率 ${(c/t*100).toFixed(0)}%`;
+  };
 
-  // 出題核心
+  function enterTopic(base){currentBase=String(base);menu.style.display='none';quizArea.style.display='block';controls.style.display='flex';generateQuiz(currentBase);loadProgress(currentBase);}
+
   function generateQuiz(base){
-    quizArea.innerHTML = '';
-    const sec = document.createElement('div');
-    sec.className='rule-section';
-    sec.innerHTML = `
-      <h2>${base} 的倍數判斷</h2>
-      <p class="rule-description">${ruleText[base]}</p>
-    `;
-    // 四題隨機
+    quizArea.innerHTML='';
+    const sec=document.createElement('div');sec.className='rule-section';
+    sec.innerHTML=`<h2>${base} 的倍數判斷</h2><p class="rule-description">${ruleText[base]}</p>`;
     for(let i=1;i<=4;i++){
-      const n = rnd3();
-      const ans = isMultiple[base](n) ? 'is' : 'not';
-      const q = document.createElement('div');
-      q.className='question';
-      q.dataset.id = `${base}_${i}`;
-      q.dataset.answer = ans;
-      q.innerHTML = `
-        <span class="question-text">${i}. ${n}</span>
-        <label><input type="radio" name="${base}_${i}" value="is">是</label>
-        <label><input type="radio" name="${base}_${i}" value="not">不是</label>
-        <button class="check-btn">檢查</button>
-        <span class="feedback"></span>
-      `;
+      const n=rnd3();const ans=isMultiple[base](n)?'is':'not';
+      const q=document.createElement('div');q.className='question';q.dataset.id=`${base}_${i}`;q.dataset.answer=ans;
+      q.innerHTML=`<span class="question-text">${i}. ${n}</span>
+      <label><input type="radio" name="${base}_${i}" value="is">是</label>
+      <label><input type="radio" name="${base}_${i}" value="not">不是</label>
+      <button class="check-btn">檢查</button><span class="feedback"></span>`;
       sec.appendChild(q);
     }
-    // 保留一題填空（放在 3 的主題）
-    if(base === '3'){
-      const q5 = document.createElement('div');
-      q5.className='question fill-in';
-      q5.dataset.id = `${base}_fill`;
-      q5.dataset.answer = '1,4,7';
-      q5.innerHTML = `
-        <span class="question-text">5. 若數字「23□」是 3 的倍數，□＝？</span>
-        <input type="text" class="fill-in-answer" placeholder="填入所有可能數字,用逗號,分隔">
-        <button class="check-btn">檢查</button>
-        <span class="feedback"></span>
-      `;
-      sec.appendChild(q5);
+    // 加上填空題
+    const f=fillQuestions[base];
+    if(f){
+      const qf=document.createElement('div');qf.className='question fill-in';qf.dataset.id=`${base}_fill`;qf.dataset.answer=f.ans;
+      qf.innerHTML=`<span class="question-text">5. ${f.text}</span>
+      <input type="text" class="fill-in-answer" placeholder="填入所有可能數字,用逗號,分隔">
+      <button class="check-btn">檢查</button><span class="feedback"></span>`;
+      sec.appendChild(qf);
     }
     quizArea.appendChild(sec);
-    bindQuestionEvents();
+    bindEvents();
   }
 
-  // 綁定題目事件
-  function bindQuestionEvents(){
+  function bindEvents(){
     quizArea.querySelectorAll('.check-btn').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const q = btn.closest('.question');
-        const ans = q.dataset.answer;
-        const fb = q.querySelector('.feedback');
-        let ok=false;
+      btn.onclick=()=>{
+        const q=btn.closest('.question');const fb=q.querySelector('.feedback');let ok=false;
         if(q.classList.contains('fill-in')){
-          const v = normalize(q.querySelector('.fill-in-answer').value);
-          if(!v){ fb.textContent='請填入答案'; fb.className='feedback incorrect'; return; }
-          ok = (v===ans);
+          const v=normalize(q.querySelector('.fill-in-answer').value);
+          if(!v){fb.textContent='請填入答案';fb.className='feedback incorrect';return;}
+          ok=(v===q.dataset.answer);
         }else{
           const s=q.querySelector('input[type="radio"]:checked');
-          if(!s){ fb.textContent='請選擇答案'; fb.className='feedback incorrect'; return; }
-          ok = (s.value===ans);
+          if(!s){fb.textContent='請選擇答案';fb.className='feedback incorrect';return;}
+          ok=(s.value===q.dataset.answer);
         }
-        fb.textContent = ok ? '答對了！🎉' : '再試一次！💪';
-        fb.className = 'feedback '+(ok?'correct':'incorrect');
+        fb.textContent=ok?'答對了！🎉':'再試一次！💪';
+        fb.className='feedback '+(ok?'correct':'incorrect');
         saveProgress(currentBase);
-      });
+      };
     });
     quizArea.querySelectorAll('input[type="radio"],input[type="text"]').forEach(el=>{
-      el.addEventListener('input', ()=>saveProgress(currentBase));
-      el.addEventListener('change', ()=>saveProgress(currentBase));
+      el.addEventListener('input',()=>saveProgress(currentBase));
+      el.addEventListener('change',()=>saveProgress(currentBase));
     });
   }
 
-  // 進度儲存 / 載入（每主題獨立）
   function saveProgress(base){
-    if(!base) return;
-    const key = STORAGE_PREFIX+base;
-    const data = {};
+    if(!base)return;
+    const key=STORAGE_PREFIX+base;const data={};
     quizArea.querySelectorAll('.question').forEach(q=>{
-      const id=q.dataset.id; if(!id) return;
+      const id=q.dataset.id;if(!id)return;
       if(q.classList.contains('fill-in')){
-        data[id]={type:'text', value:q.querySelector('.fill-in-answer')?.value||""};
+        data[id]={type:'text',value:q.querySelector('.fill-in-answer')?.value||""};
       }else{
         const s=q.querySelector('input[type="radio"]:checked');
-        data[id]={type:'radio', value: s? s.value : ""};
+        data[id]={type:'radio',value:s?s.value:""};
       }
     });
-    localStorage.setItem(key, JSON.stringify(data));
+    localStorage.setItem(key,JSON.stringify(data));
   }
   function loadProgress(base){
-    if(!base) return;
-    const key = STORAGE_PREFIX+base;
-    const data = JSON.parse(localStorage.getItem(key)||"{}");
-    Object.entries(data).forEach(([id,item])=>{
-      const q = quizArea.querySelector(`[data-id="${id}"]`);
-      if(!q) return;
-      if(item.type==='text'){
-        const inp=q.querySelector('.fill-in-answer');
-        if(inp) inp.value=item.value||"";
-      }else if(item.type==='radio' && item.value){
-        const r=q.querySelector(`input[type="radio"][value="${item.value}"]`);
-        if(r) r.checked=true;
-      }
+    if(!base)return;
+    const key=STORAGE_PREFIX+base;const data=JSON.parse(localStorage.getItem(key)||"{}");
+    Object.entries(data).forEach(([id,it])=>{
+      const q=quizArea.querySelector(`[data-id="${id}"]`);if(!q)return;
+      if(it.type==='text'){const inp=q.querySelector('.fill-in-answer');if(inp)inp.value=it.value||"";}
+      else if(it.type==='radio'&&it.value){const r=q.querySelector(`input[type="radio"][value="${it.value}"]`);if(r)r.checked=true;}
     });
   }
 });
